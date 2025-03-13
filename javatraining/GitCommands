@@ -1,0 +1,73 @@
+VSM
+
+Git Bash---
+
+pwd
+
+https://github.com/prasannatrainer80/gitpractice
+
+git clone https://github.com/prasannatrainer80/gitpractice
+
+cd gitpractice/
+
+1. Working Dir
+
+2.Staging Area 
+
+git add.
+
+3. Local repo 
+
+git commit -m "My first Commit"
+
+4.Remote Repo
+
+git pull origin main 
+
+ls
+
+git log
+
+git status
+
+
+git push origin master
+
+git status
+
+
+git pull origin master
+
+
+5) git log
+
+6) git status
+
+
+git diff
+
+
+-- git checkout file name  ( used to cancel the changes of the working directory)
+
+-- git reset HEAD dummy.txt  (dummy.txt file name and used to unstage the file from staging area to working)directory)
+
+
+git branch -- Used to  list out all branches
+
+git branch branch_name : Used to create the new branch
+
+git checkout branch_name : Used to change to particular branch
+
+
+git checkout -b branch_name : Creates a  branch and changes into that branch
+
+rm dummy.txt -- removing the particular file from the branch
+
+git branch -r "branch_name" : used to remove branch
+
+git stash : Used to Cancel changes
+ 
+git reset : Used to reset changes
+
+git merge : used to merge conflicts
+ 
