@@ -1,0 +1,11 @@
+package com.java.spring;
+
+
+
+public class HelloWorld {
+	private String greeting;
+	
+	
+	
+
+}

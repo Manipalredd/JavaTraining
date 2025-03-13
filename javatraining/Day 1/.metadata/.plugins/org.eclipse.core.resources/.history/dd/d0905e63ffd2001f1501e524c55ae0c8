@@ -1,0 +1,19 @@
+package com.java.HB_Demo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
+
+public class EmployShowMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SessionFactory sf = new AnnotationConfiguration().configure().buildSessionFactory();
+		System.out.println("connected successfully");
+		Session session = sf.openSession();
+		session.createQuery("from Employ");
+		
+
+	}
+
+}

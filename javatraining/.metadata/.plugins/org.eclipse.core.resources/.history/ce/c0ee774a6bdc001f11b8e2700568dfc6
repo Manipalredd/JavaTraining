@@ -1,0 +1,5 @@
+package com.jwt.repo;
+
+public interface UserDataRepository {
+
+}

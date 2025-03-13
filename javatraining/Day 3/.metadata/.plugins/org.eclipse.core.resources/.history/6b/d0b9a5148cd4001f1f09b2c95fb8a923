@@ -1,0 +1,11 @@
+package com.java.spring;
+
+import org.springframework.beans.propertyeditors.StringArrayPropertyEditor;
+
+public class HelloWorld {
+	private String greeting;
+	
+	
+	
+
+}

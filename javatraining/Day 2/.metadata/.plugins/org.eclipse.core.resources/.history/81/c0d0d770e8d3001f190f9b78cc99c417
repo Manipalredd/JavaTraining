@@ -1,0 +1,16 @@
+package com.java.hib;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Address")
+public class Address {
+	
+	
+	private int addressId;
+	private String address1;
+	
+	
+
+}

@@ -1,0 +1,14 @@
+package com.java.agent.model;
+
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Entity;
+
+@Data
+@Entity
+@Table(name = "Agent")
+public class Agent {
+	
+	
+
+}

@@ -1,0 +1,10 @@
+package com.java.hib.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Employ")
+public class Employ {
+
+}

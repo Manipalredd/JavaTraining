@@ -1,0 +1,28 @@
+package com.java.dao;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.hql.internal.ast.util.SessionFactoryHelper;
+
+import com.java.Hib.model.Employ;
+import com.mysql.cj.Session;
+
+public class EmployDaoImpl implements EmployDao{
+
+	SessionFactory sessionFactory;
+	Session session;
+	
+	@Override
+	public List<Employ> showEmployDao() {
+		sessionFactory=SessionFactoryHelper.getConnection();
+		session=sessionFactory.openSession();
+		Query query=session.createQuery("from Employ");
+		List<Employ> employlist=query.list();
+		
+		
+		return employlist;
+	}
+	
+
+}

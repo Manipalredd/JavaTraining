@@ -1,0 +1,6 @@
+package com.java.spr.dao;
+
+public interface EmpoyDao {
+	List<Employ> showEmployDao();
+
+}

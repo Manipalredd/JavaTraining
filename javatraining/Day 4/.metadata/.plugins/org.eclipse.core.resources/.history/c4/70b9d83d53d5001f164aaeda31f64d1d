@@ -1,0 +1,16 @@
+package com.java.spr.main;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.java.dao.EmployDaoImpl;
+
+public class EmployShowMain {
+
+	public static void main(String[] args) {
+         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("com/java/spr/jdbc.xml");
+         EmployDaoImpl impl = ctx.getBean("employDao");
+         
+
+	}
+
+}

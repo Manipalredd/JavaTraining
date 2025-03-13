@@ -1,0 +1,9 @@
+package com.java.spr;
+
+public class MainPrg {
+
+	public static void main(String[] args) {
+
+	}
+
+}

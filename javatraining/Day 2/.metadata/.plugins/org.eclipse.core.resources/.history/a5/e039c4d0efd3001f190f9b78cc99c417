@@ -1,0 +1,13 @@
+package com.java.hib;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+public class Question {
+	
+	
+	@Entity
+	@Table(name="Question")
+	
+
+}

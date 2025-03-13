@@ -1,0 +1,12 @@
+package com.java.spr;
+
+public class HelloWorld {
+     private String WelcomeNote;
+     private String SupportNote;
+     private String HelpNote;
+     private String EndNote;
+     
+     
+     
+     
+}

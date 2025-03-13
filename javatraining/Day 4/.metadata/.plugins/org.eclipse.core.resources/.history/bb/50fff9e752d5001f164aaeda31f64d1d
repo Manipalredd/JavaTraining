@@ -1,0 +1,13 @@
+package com.java.spr.main;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class EmployShowMain {
+
+	public static void main(String[] args) {
+         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext();
+         
+
+	}
+
+}

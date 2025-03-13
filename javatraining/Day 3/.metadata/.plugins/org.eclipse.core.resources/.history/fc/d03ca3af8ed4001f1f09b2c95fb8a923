@@ -1,0 +1,16 @@
+package com.java.spring;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainPrg {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("com/java/spring/HelloWorld.xml");
+		HelloWorld hello = (HelloWorld) ctx.getBean("beanHelloWorld");
+		System.out.println(hello.show("Anoop"));
+		
+
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.java.agent.dao;
+
+public interface AgentDao {
+	List<Agent> showAgentDao();
+	Agent searchEmployDao(int agentId);
+	String updateAgentDao (Agent agent);
+	String deleteAgentDao(int agentId);
+	String addAgentDao(Agent agent);
+
+}

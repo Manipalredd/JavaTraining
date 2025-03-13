@@ -1,0 +1,11 @@
+package com.java.HB_Demo;
+
+public class EmployInsertMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employ employ = new Employ();
+
+	}
+
+}

@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<jsp:useBean id="beanEmployDao" class="com.java.hib.dao.EmployDaoImpl" />
+	<c:set var ="depts" value="${beanEmployDao.showDept()}" />
+	<form action="DeptShow.jsp" method="get">
+		Department:
+		<select name="dept" onchange="this.form.submit()">
+			<option value="Select">Select Department</option>
+			<c:forEach var="dpt" items="${depts}">
+				<option value="${dpt}">${dpt}</option>
+			</c:forEach>
+		</select>
+	</form> <br> <br>
+	<table border="2" align="center">
+			<tr>
+				<th>Employee No</th>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Department</th>
+				<th>Designation</th>
+				<th>Basic</th>
+			</tr>
+			<c:set var="employeeList" value="${beanEmployeeDao.showDeptDetails(param.dept)}" />
+			<c:forEach var="employee" items="${employeeList }">
+				<tr>
+					<td>${employee.empno }</td>
+					<td>${employee.name }</td>
+					<td>${employee.gender }</td>
+					<td>${employee.dept }</td>
+					<td>${employee.designation }</td>
+					<td>${employee.basic }</td>
+				</tr>
+			</c:forEach>
+	</table>
+</body>
+</html>

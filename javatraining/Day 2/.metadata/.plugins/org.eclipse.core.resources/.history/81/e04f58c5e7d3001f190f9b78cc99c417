@@ -1,0 +1,13 @@
+package com.java.hib;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Student")
+public class Student {
+
+	
+
+	
+}

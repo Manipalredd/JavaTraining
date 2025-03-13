@@ -1,0 +1,19 @@
+package com.java.spr;
+
+import java.util.Scanner;
+
+public class MainPrg {
+
+	public static void main(String[] args) {
+     String sname;
+     Scanner scan = new Scanner(System.in);
+     System.out.println("enter person name  ");
+     sname=scan.nextLine();
+     
+     
+     
+     
+
+	}
+
+}

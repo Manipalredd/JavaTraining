@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+<body>
+<form method="post" action="Login1.jsp">
+    <center>
+        User Name:
+        <input type="text" name="userName" /> <br/><br/>
+
+        Password:
+        <input type="password" name="passCode" /> <br/><br/>
+        <input type="submit" value="Login" />
+    </center>
+</form>
+
+<c:if test="${param.userName != null && param.passCode != null}">
+    <jsp:useBean id="beanEmployDao" class="com.java.hib.dao.EmployDaoImpl" />
+    <jsp:useBean id="beanLogin" class="com.java.hib.model.Login" />
+
+    <!-- Populate beanLogin object with form parameters -->
+    <jsp:setProperty property="userName" name="beanLogin"/>
+    <jsp:setProperty property="passCode" name="beanLogin"/>
+
+    <!-- Authenticate the user -->
+    <c:set var="count" value="${beanEmployDao.authenticate(beanLogin)}" />
+    
+    <!-- Check if authentication is successful -->
+    <c:if test="${count == 1}">
+        <jsp:forward page="Menu.jsp" />
+    </c:if>
+    
+    <!-- If credentials are invalid -->
+    <c:if test="${count == 0}">
+        <c:out value="Invalid Credentials..." />
+    </c:if>
+</c:if>
+
+</body>
+</html>

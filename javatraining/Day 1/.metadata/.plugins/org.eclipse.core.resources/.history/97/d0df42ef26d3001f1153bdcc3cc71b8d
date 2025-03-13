@@ -1,0 +1,11 @@
+package com.java.agent.model;
+
+
+@Data
+@Entity
+@Table(name = "Agent")
+public class Agent {
+	
+	
+
+}

@@ -1,0 +1,10 @@
+package com.java.util;
+
+public class SessionHelper {
+public static SessionFactory getConnection() {
+		
+		return new AnnotationConfiguration().configure().buildSessionFactory();
+		
+		
+	}
+}

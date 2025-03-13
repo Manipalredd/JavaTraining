@@ -1,0 +1,17 @@
+package com.java.HB_Demo;
+
+import java.util.Scanner;
+
+public class EmploySearchMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int empno;
+		Scanner scan = new Scanner(System.in);
+		empno=scan.nextInt();
+		System.out.println("Enter Employ No : ");
+		
+
+	}
+
+}

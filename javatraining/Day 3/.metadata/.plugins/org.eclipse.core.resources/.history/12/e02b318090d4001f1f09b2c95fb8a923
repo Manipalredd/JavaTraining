@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC 
+"-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="beanHelloWorld" class="com.java.spr.HelloWorld">
+<property name="WelcomeNote" value="Welcome to Customer Care System"/>
+<property name="SupportNote" value="Hello Mr/Miss/Mrs.."/>
+<property name="HelpNote" value="How can we help You Out..."/>
+<property name="EndNote" value="Welcome to Customer Care System"/>
+
+</bean>
+</beans>

@@ -1,0 +1,22 @@
+package com.java.hib;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
+
+public class AddStudentMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		SessionFactory sf = new AnnotationConfiguration().configure().buildSessionFactory();
+		Session session = sf.openSession();
+		Student student = new Student();
+		student.setSname("manipal");
+		student.setCity("bellary");
+		student.setCgpa(6.79);
+
+	}
+	
+
+}

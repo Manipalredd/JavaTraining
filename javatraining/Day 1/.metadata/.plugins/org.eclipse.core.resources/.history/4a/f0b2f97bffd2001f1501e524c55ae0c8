@@ -1,0 +1,25 @@
+package com.java.HB_Demo;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
+
+public class EmployShowMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SessionFactory sf = new AnnotationConfiguration().configure().buildSessionFactory();
+		System.out.println("connected successfully");
+		Session session = sf.openSession();
+		Query query = session.createQuery("from Employ");
+		List <Employ> emList = query.list();
+		for (Employ employ : emList) {
+			System.out.println();
+		}
+
+	}
+
+}

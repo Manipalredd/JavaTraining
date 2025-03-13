@@ -1,0 +1,19 @@
+package com.example.spring;
+
+public class SecurityConfig {
+	
+	@Configuration
+	@EnableWebSecurity
+	public class SecurityConfig {
+	 
+		 protected void configure(HttpSecurity http) throws Exception {
+		        http
+		                .authorizeRequests()
+		                .anyRequest().authenticated()
+		                .and()
+		                .formLogin()
+		                .and()
+		                .httpBasic();
+		    }
+
+}

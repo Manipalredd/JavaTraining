@@ -1,0 +1,7 @@
+package com.java.HB_Demo;
+
+public class Employ {
+	private int empno;
+	
+
+}

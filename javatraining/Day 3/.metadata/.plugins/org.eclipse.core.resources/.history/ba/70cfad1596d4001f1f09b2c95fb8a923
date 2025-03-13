@@ -1,0 +1,12 @@
+package com.java.spr;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainPrg {
+
+	public static void main(String[] args) {
+          ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext();
+		
+	}
+
+}

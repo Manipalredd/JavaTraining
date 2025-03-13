@@ -1,0 +1,45 @@
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `mobile_no` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `password_hash` varchar(255) NOT NULL,
+  `first_login` tinyint(1) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `is_active` tinyint(1) DEFAULT '1',
+  `password` varchar(255) DEFAULT NULL,
+  `manager_id` int DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `fk_roleUnder` (`manager_id`),
+  CONSTRAINT `fk_roleUnder` FOREIGN KEY (`manager_id`) REFERENCES `users` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'john_doe','vankayalamahita@gmail.com','John','Doe','12345678','123 Elm Street, Springfield, USA','Artist','password',0,'2025-01-20 12:31:43','2025-02-17 05:55:12',1,'$2a$10$f01Y1GJ.F1Oe46OyZZA.5eJwcqhCx.Zc1s2G5d89ylXnJcdN9yCeW',2),(2,'jane_smith','manichaitanya.mc@gmail.com','Jane','Smith','9876543210','456 Oak Avenue, Metropolis, USA','Manager','hashed_password_example_2',0,'2025-01-20 12:32:29','2025-02-10 16:54:20',1,'$2a$10$yORckOK1gAHO44P/YPQw3ei.5NbNe7.T1zYy4ooKHQgqC3qovk5qy',2),(3,'michael_artist','michael.artist@example.com','Michael','Johnson','111222337456','789 Maple Street, Gotham City, USA','Artist','hashed_password_artist',0,'2025-01-20 12:33:03','2025-02-10 05:47:17',1,'$2a$10$X8fz4LHB.pGMK8DDj1TVZOhfYIS93ie0.hq9F.QZ.xVuueAu9NpUy',45),(5,'dinesh','dinesh@example.com','dinesh','peram','9876543210','456 Oak Avenue, Metropolis, USA','Artist','dinesh',0,'2025-01-22 11:49:08','2025-02-08 11:17:13',1,'9c9f1c65b1dc1f79498c9f09eb610e1a',2),(6,'mahita','mahita.bvrm@gmail.com','Mahita','V','987687656','Bangalore, India','Admin','mahita123',0,'2025-01-27 11:28:52','2025-02-17 14:37:58',1,'$2a$10$7makK7tdgmSKuYj5V9E5vON0Bo77afeD1n2S5/J/470Isq3TyFAHW',6),(7,'harshitha','harshitha@gmail.com','Harshitha','J','9876543232','bangalore','Manager','harshitha',0,'2025-01-28 13:33:26','2025-02-09 06:55:15',1,'$2a$10$y1iS6FfSmoGPMX9aLoJCbe2kkyJ625DuP8ikZISd.Y1OUH9g3xd3e',7),(11,'anoop','anoop@gmail.com','anoop','K','987654321','Hyderabad','Artist','anoop123',1,'2025-01-31 07:39:02','2025-02-06 11:50:29',1,'anoop123',7),(12,'poojitha','pooji@gmail.com','Poojitha','P','9876543210','Hyderabad','Artist','pooji@123',1,'2025-01-31 07:43:52','2025-01-31 07:43:52',1,'pooji@123',2),(14,'varshitha','varshitha@gmail.com','varshitha','singh','9876567890','mysore','Artist','varshitha',0,'2025-02-03 12:45:28','2025-02-07 05:25:56',1,'$2a$10$lGD80PdhjFkgaaMrhC7XmemejB92IW.aGoS1xFN.4sVLUfZI32pY2',7),(15,'neha','neha@gmail.com','Neha','R','9876543212','Bangalore','Artist','neha',1,'2025-02-05 03:24:39','2025-02-05 03:24:39',1,'neha',2),(16,'sathwik','sathwik@gmail.com','sathwik','a','98765434567',NULL,'Admin','sathwik',0,'2025-02-05 05:35:25','2025-02-08 11:18:15',1,'79f37f5456e39fd61cb5258d313f725e',2),(17,'chaitanya','chaitanya@gmail.com','Chaitanya','B','1234567890','Hyderabad','Manager','7fc4c05e401c6a7355dcedc978f839d9',0,'2025-02-05 16:14:24','2025-02-05 16:15:55',1,'chaitanya',17),(18,'sitaram','sitaram@gmail.com','Sitaram','B','6372846273','Telangana','Artist','sitaram',0,'2025-02-05 16:25:35','2025-02-05 16:37:35',1,'fdab37863626fa2bff95a428e6afa93b',7),(19,'saketh','saketh@gmail.com','Saketh','P','3826382531','Vizag','Artist','saketh',0,'2025-02-05 16:28:10','2025-02-05 16:37:35',1,'47097357fa18466c03efe81b056677d0',2),(21,'dheeraj','dheeraj@gmail.com','Dheeraj','S','734738294632','Delhi','Artist','dheeraj123',0,'2025-02-05 16:38:09','2025-02-10 09:32:55',1,'955f6771e708f604bbe523e8a636ba00',2),(31,'jane','jane.smith@eple.com','Jane','S','9876543210','456 Oak Avenue, Metropolis, USA','Manager','password',0,'2025-02-08 09:52:26','2025-02-08 09:52:26',1,'$2a$10$y2ZA0FpcNqjrfnWnZ.dOhetEWjGhYdgJ3e0H5x.WrQKXCo2/7PNj.',2),(33,'kale','kale.smith@eple.com','Kale','S','9876543210','456 Oak Avenue, Metropolis, USA','Manager','password',0,'2025-02-08 09:53:26','2025-02-08 10:14:08',1,'$2a$10$lRH74UKD4lnYawoVor5NpOE30FPraO7R.Vw1B0mspdFgH/F.SHQ9m',1),(34,'srihari','srihari@gmail.com','Srihari','P','08646384957','Chennai','Artist','srihari',0,'2025-02-08 10:04:38','2025-02-08 10:14:08',1,'$2a$10$wL1f.tKjnZ2.QC8n8jkfZO3Ajevm/guGjJVprMSyl5DNUjv1rHjmG',6),(40,'manishpaul','manish@gmail.com','Manish','Paul','08645383943','Bhimavaram','Artist','manishpaul',0,'2025-02-08 10:29:49','2025-02-10 04:51:22',1,'$2a$10$GVsiapkB4nyPs8kvCq13Z.KPEtFt.Z2kgx8FK.xjApjIITntzBUEa',6),(43,'rakshithaaa','manishhh@gmail.com','Manish','Paul','08645383943','Bhimavaram','Artist','password',0,'2025-02-08 10:43:27','2025-02-08 10:43:27',0,'$2a$10$0fdE7BltuYGpXgLhz1DPc.Mj/mr8HTJixMe5oM9BH15SW8tVxTzw6',6),(44,'kalafe','kale.smithh@eple.com','Kale','S','9876543210','456 Oak Avenue, Metropolis, USA','Manager','password',0,'2025-02-08 10:45:18','2025-02-16 12:11:37',1,'$2a$10$knAWtIFNgeq7wbI/.Eg13OjSQFWRrPVZYJIFvVg971g75X1OJoNmO',1),(45,'kalattfe','manipalreddy622@gmail.com','Kaleth','S','9876543210','456 Oak Avenue, Metropolis, USA','Manager','password',0,'2025-02-08 10:47:05','2025-02-13 03:10:12',1,'$2a$10$ktJnBR8XSy7Ht4MVGPnN/epxRuRD/3kB0UG.PBpDOW6qdRFA2tmCq',1),(49,'swetha','swetha@gmail.com','swetha','n','234567898765','Chennai','Artist','swetha',0,'2025-02-08 11:11:23','2025-02-17 12:12:14',1,'$2a$10$oLmJdEEE6zSBsHY1M5JKaueo7rB6/zllUMoIEoBKcnoRpFlPoW2bS',2),(50,'abcd','sdfghj@gmail.com','wertyu','wertyu','2345678','sfgjk','Artist','asdfgh',1,'2025-02-08 11:19:15','2025-02-10 05:46:42',0,'a152e841783914146e4bcd4f39100686',1),(51,'abcdfghj','sdfghsdfghj@gmail.com','wertyu','wertyu','2345678','sfgjk','Artist','qwertyuiop',0,'2025-02-08 11:23:54','2025-02-08 11:23:54',0,'$2a$10$xJV.rnU.a1DtfHZyDquED.Ag/hsWmIzydeaHnBr3hsrPuLDaeLfOK',6),(52,'abcdfghjdfg','sdfghsdfdfsgghj@gmail.com','wertyu','wertyu','2345678','sfgjk','Artist','asdfghjkl',0,'2025-02-08 11:30:18','2025-02-08 11:33:04',1,'$2a$10$RCB0z0gkXzfcT9aNZEiu2u6wYgdT9YF1/LJd1pjcGXkkoh3tUrNyy',1),(53,'mahitha','vankayala@gmail.com','mahitha','v','93562863829','sdfghj','Artist','mahitha',0,'2025-02-09 08:47:45','2025-02-10 16:53:50',1,'$2a$10$Pj.S1iypGBziI7qtUj.zueqtfPFfq7zsYgg5qc6MpycIG0qYCG98O',6),(55,'kirank','priyabesta08@gmail.com','Kiran','K','9908310707',NULL,'Artist','oNcIas8Kdy',0,'2025-02-09 17:24:48','2025-02-10 06:31:11',1,'$2a$10$20.pRA/lRyOsSq2Cw2s4pOkW8Qe6m9lQs9EHLJ1f.L9E43Gn2Zg4y',6),(57,'viswak','mahita3.bvrm@gmail.com','viswa','K','9908310707',NULL,'Artist','5CiGrNKsHb',1,'2025-02-09 17:25:46','2025-02-17 06:01:19',1,'$2a$10$k8If8EeYZKlPcFu4n66r.OaiMXlHWTUG7BNc5X59cW7rx6sx9u5KW',2),(59,'kiranka','mahita1.bvrm@gmail.com','Kiran','K','9908310707',NULL,'Artist','Pp3jdhPK2f',1,'2025-02-09 17:51:52','2025-02-17 06:02:34',1,'$2a$10$/6SKtstff4ArKEX5gUpQTe4c7dNuWMlPbOmM/0OMKys7XbyqMmGXa',6),(60,'chaitubonagiri','manic@gmail.com','Chaitu','Bonagiri','9885064363',NULL,'Artist','TmUY16sEKm',1,'2025-02-09 18:07:02','2025-02-13 10:23:24',1,'$2a$10$56Fxnkk9eKFvzzI6qiVp1.r4G5jvIbXnWwKWKTQBEJ6P5Py37U/N2',2),(61,'manipalreddy','manipalreddy6221@gmail.com','manipal','reddy','456794527827',NULL,'Artist','AwJzAdh8MW',1,'2025-02-10 05:17:56','2025-02-17 04:20:08',1,'$2a$10$0yuX1Xi9d23n3MyE46QywufPFB.FM5Y0YKdG3bKRzIwfVWNr6hkJi',2),(62,'zombie','zombiereddy@gmail.com','Zombie','Reddy','7584736574','gekwjfrhek','Artist','zombie@123K',1,'2025-02-10 08:58:35','2025-02-13 13:08:33',1,'$2a$10$RsV7omtPCAC1Rdp3E28qSOG6cx0g9kq3xFPaumvuESv/xsRqqRr7C',2),(63,'venky','venkatesh@gmail.com','Venkatesh','L','75838217432','dfghj','Manager','venky',1,'2025-02-14 06:08:11','2025-02-14 06:46:26',1,'$2a$10$mrPCKNbJNpD2z1KkJYQY8ugG4rVxpm3IyfUp3nUWLeQkhSHV6nbmu',6),(64,'manoj','manoj@example.com','Manoj','K','9473856392','dfghjwdc','Artist','manoj',0,'2025-02-14 06:23:20','2025-02-14 06:23:20',1,'$2a$10$HxZKwNBiz9ZgVsEeSi6PLuhrMhtwbWJ9pJZf0bi02pKKuHD6px.du',6),(70,'prasanna','prasanna@gmail.com','prasanna','pappu','65789426782','ertyudfgh','Artist','prasanna',0,'2025-02-14 07:04:49','2025-02-16 13:03:50',1,'$2a$10$xKzGCnDby1XLj0iqdHdCo.9LGp87Y325PxwpfEXvmSX/HYTrB1aqu',7);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
