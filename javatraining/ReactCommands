@@ -1,0 +1,42 @@
+set path=%path%;C:\Users\Manipal.reddy\AppData\Roaming\npm;
+ 
+chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
+ 
+create-react-app (name)
+ 
+cd (name)
+ 
+npm i web-vitals
+ 
+npm i axios
+npm start
+ 
+to edit
+ 
+Vs code
+ 
+file - folder-browse- src- app.js(in this you edit)
+ 
+cmd in file(name)
+ 
+npm i -g reactjs-component-generator
+ 
+rg components first -f
+ 
+ 
+then VS code
+ 
+delete first.fcss in components
+ 
+//import './first.scss' comment this
+ 
+class first change to First
+ 
+in app.js do  <First/> and import first
+ 
+ 
+npm i react-router-dom  
+has context menu
+
+
+https://medevel.com/os-react-dashboard/
